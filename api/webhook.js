@@ -31,7 +31,7 @@ export default async function handler(req, res) {
   if (req.method === 'GET') {
     // Jalur A: Ambil data Papan Peringkat (?type=leaderboard)
     if (req.query.type === 'leaderboard') {
-      const topData = await redis.zrange('top_donors', 0, 9, { rev: true, withScores: true });
+      const topData = await redis.zrange('top_donors', 0, 29, { rev: true, withScores: true });
       return res.status(200).json(topData);
     } 
     
